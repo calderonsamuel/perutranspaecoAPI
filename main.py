@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from routers import items
+
 app = FastAPI()
+app.include_router(items.router)
 
 class User(BaseModel):
     id: int
